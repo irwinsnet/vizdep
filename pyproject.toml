@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "vizdep"
+version = "0.1.0"
+description = ""
+authors = ["Stacy Irwin <stacy.k.irwin@gmail.com>"]
+readme = "README.md"
+packages = [{include = "vizdep", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+dash = "*"
+pandas = "*"
+plotly = "*"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
