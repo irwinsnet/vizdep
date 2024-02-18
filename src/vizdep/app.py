@@ -1,6 +1,7 @@
 import pathlib
 
 from dash import Dash, html, dcc, callback, Output, Input
+
 import plotly.express as px
 import pandas as pd
 
@@ -8,7 +9,9 @@ CURR_FOLDER = pathlib.Path(__file__).parent
 
 df = pd.read_csv(CURR_FOLDER / 'gapminder_unfiltered.csv')
 
+
 app = Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
     html.H1(children='Title of Dash App', style={'textAlign':'center'}),
@@ -25,4 +28,4 @@ def update_graph(value):
     return px.line(dff, x='year', y='pop')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host="0.0.0.0")
